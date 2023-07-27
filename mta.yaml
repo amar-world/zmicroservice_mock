@@ -1,0 +1,36 @@
+_schema-version: '3.2'
+ID: ZMICROSERVICE
+version: 0.0.1
+description: CM Rest Microservice
+modules:
+  - name: CMJsonMicroservice
+    path: myapp
+    type: nodejs
+    requires:
+      - name: xsuaainstanceCMService
+      - name: applicationLogginginstance
+      - name: connectivityinstance
+      - name: destinationinstance
+    description: |
+      REst Proxy Microservice
+resources:
+  - name: destinationinstance
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
+  - name: connectivityinstance
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: connectivity
+      service-plan: lite
+  - name: applicationLogginginstance
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: application-logs
+      service-plan: lite
+  - name: xsuaainstanceCMService
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: apiaccess

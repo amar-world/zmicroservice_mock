@@ -1,0 +1,33 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test:console": "cross-env NODE_ENV=test jest --verbose false --testTimeout=30000",
+    "test": "cross-env NODE_ENV=test jest --testTimeout=30000",
+    "test:dev": "jest --watchAll"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sap/xsenv": "^3.4.0",
+    "@sap/xssec": "^3.2.17",
+    "axios": "^1.4.0",
+    "body-parser": "^1.20.2",
+    "cf-nodejs-logging-support": "^7.1.0",
+    "cfenv": "^1.2.4",
+    "cross-env": "^7.0.3",
+    "express": "^4.18.2",
+    "passport": "^0.6.0",
+    "sap-cf-axios": "^0.4.10"
+  },
+  "description": "Micro service",
+  "devDependencies": {
+    "axios-mock-adapter": "^1.21.5",
+    "jest": "^29.6.1",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
+  }
+}
